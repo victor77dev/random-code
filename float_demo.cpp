@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class float_demo_8 {
+class float_demo_16 {
     char num[2];
     bool sign; // 1 bit
     int exp; // 5 bits
@@ -37,11 +37,11 @@ class float_demo_8 {
     }
 
     public:
-    float_demo_8(string input) {
+    float_demo_16(string input) {
     }
-    float_demo_8(): float_demo_8(""){}
+    float_demo_16(): float_demo_16(""){}
 
-    float_demo_8& operator=(string input) {
+    float_demo_16& operator=(string input) {
 
         return *this;
     }
@@ -64,7 +64,7 @@ class float_demo_8 {
 
 
 int main() {
-    float_demo_8 f;
+    float_demo_16 f;
     f = "0.1";
     printf("%c%c\n", f.firstChar(), f.secondChar());
     cout << f.getBits() << endl;
