@@ -23,6 +23,17 @@ class float_demo_8 {
             }
 
         }
+
+        setNum();
+    }
+
+    void setNum() {
+        exp << 2;
+        num[0] = exp & 0b01111100;
+        if (sign) num[0] = num[0] | 0b10000000;
+        num[1] = frac & 0b11111111;
+        frac >> 8;
+        num[0] = frac & 0b00000111;
     }
 
     public:
