@@ -6,6 +6,7 @@ using namespace std;
 
 class float_demo_8 {
     char num[2];
+    bool sign; // 1 bit
     int exp; // 5 bits
     int frac; // 11 bits
 
@@ -14,6 +15,12 @@ class float_demo_8 {
         frac = 0;
 
         for (int i = 0; i < input.length(); i++) {
+            char c = input[i];
+            if (i == 0 && c == '-') {
+                sign = true;
+            } else {
+                sign = false;
+            }
 
         }
     }
