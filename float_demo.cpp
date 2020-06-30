@@ -10,7 +10,7 @@ class float_demo_16 {
     int exp; // 5 bits
     int frac; // 11 bits
 
-    void setExpFrac(string input) {
+    void setSignExpFrac(string input) {
         exp = 0;
         frac = 0;
 
@@ -21,13 +21,10 @@ class float_demo_16 {
             } else {
                 sign = false;
             }
-
         }
-
-        setNum();
     }
 
-    void setNum() {
+    void setBinaryNum() {
         exp << 2;
         num[0] = exp & 0b01111100;
         if (sign) num[0] = num[0] | 0b10000000;
@@ -42,7 +39,8 @@ class float_demo_16 {
     float_demo_16(): float_demo_16(""){}
 
     float_demo_16& operator=(string input) {
-
+        setSignExpFrac(input);
+        setBinaryNum();
         return *this;
     }
 
