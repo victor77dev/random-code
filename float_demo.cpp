@@ -14,7 +14,8 @@ class float_demo_16 {
         exp = 0;
         frac = 0;
 
-        for (int i = 0; i < input.length(); i++) {
+        const int len = input.length();
+        for (int i = 0; i < len; i++) {
             char c = input[i];
             if (i == 0 && c == '-') {
                 sign = true;
@@ -36,7 +37,7 @@ class float_demo_16 {
     public:
     float_demo_16(string input) {
     }
-    float_demo_16(): float_demo_16(""){}
+    float_demo_16(): float_demo_16("") {}
 
     float_demo_16& operator=(string input) {
         setSignExpFrac(input);
