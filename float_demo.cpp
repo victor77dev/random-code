@@ -10,6 +10,20 @@ class float_demo_16 {
     int exp; // 5 bits
     int frac; // 11 bits
 
+    void decTobin(int num, int base) {
+        string digits = "";
+        while (num > 0) {
+            num = num << 2;
+            if (num > base) {
+                num -= base;
+                digits += '1';
+            } else {
+                digits += '0';
+            }
+        }
+        printf("bin: %s", digits);
+    }
+
     void setSignExpFrac(string input) {
         exp = 0;
         frac = 0;
